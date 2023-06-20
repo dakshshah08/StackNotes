@@ -1,0 +1,45 @@
+<h3><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-circle-square" viewBox="0 0 16 16">
+  <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6z"/>
+  <path d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a6.953 6.953 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79c.097.324.17.658.22 1z"/>
+</svg> Public Notes</h3/>
+<ul class="search-form">
+    <li>    
+        <form id="search-site"  action='/stories/search/:query' method='get'>
+            <div class="input-group">
+                    <i class="fas fa-search fa-large" ></i>
+                    <div class="input-field">
+                    <input id="search" type="search" name='query' placeholder="Search by title">
+                    <label class="label-icon" for="search">
+                    </label>
+                 </div>
+                <button type="submit" class="input-group-addon btn">search</button>
+            </div>
+
+        </form>  
+    </li>   
+</ul>
+<div class="row">
+    {{#each stories}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                {{{editIcon user ../user _id}}}
+            </div>
+            <div class="card-content center-align">
+                <h5>{{title}}</h5>
+                <p>{{stripTags (truncate body 150)}}</p>
+                <br>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                    <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>No notes to display</p>
+    {{/each}}
+</div>
