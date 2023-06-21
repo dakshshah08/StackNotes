@@ -2,14 +2,14 @@
   "name": "proj_two",
   "version": "1.0.0",
   "description": "App to create public and private stories",
-  "main": "index.js",
+  "main": "app.js",
   "engines":{
     "node": "18.x"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-
+    
   },
   "author": "met-a-three",
   "license": "MIT",
