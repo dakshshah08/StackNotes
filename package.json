@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "App to create public and private stories",
   "main": "app.js",
+  "engines":{
+    "node": "18.x"
+  },
   "scripts": {
     "start": "cross-env NODE-ENV=production node app",
     "dev": "cross-env NODE-ENV=development nodemon app",
